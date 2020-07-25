@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Registration form</title>
+<style>
+.box
+{
+height:550px;
+width:400px;
+border:1px solid;
+box-shadow:5px 5px;
+background-color:#46CCCC;
+}
+</style>
+<script language="javascript">
+function validate()
+{
+var msg="";
+var uname=document.register.txtun.value;
+var rUname=new RegExp("^[A-Za-z]{6,}$");
+var upwd=document.register.txtpwd.value;
+var rUpwd=new RegExp("^[\\w]{6,}$");
+var uemail=document.register.txtemail.value;
+var rUemail=new RegExp("^[\\w]+@[\\w]+.com");
+var uphone=document.register.txtphn.value;
+var rUphone=new RegExp("^[0-9]{10}$");
+if(!uname.match(rUname))
+ msg+="Username should contain only alphabets of length atleast 6 characters";
+if(!upwd.match(rUpwd))
+ msg+="\nPassword atleast 6 characters";
+if(!uemail.match(rUemail))
+ msg+="\nemail should be of abc@def.com";
+if(!uname.match(rUphone))
+ msg+="\nenter a 10 digit phone number";
+if(msg!="")
+{
+ alert(msg);
+ return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<center>
+<div class="box">
+<form name=register onsubmit="validate()" method="post">
+<table align="center">
+<caption>Registration Form</caption>
+<tr> 	
+	<td>User Name:</td>
+	<td><input type="text" name="txtun"></td>
+</tr>
+<tr> 	
+	<td>Password:</td>
+	<td><input type="password" name="txtpwd"></td>
+</tr>
+<tr> 	
+	<td>email:</td>
+	<td><input type="email" name="txtemail"></td>
+</tr>
+<tr> 	
+	<td>Mobile No:</td>
+	<td><input type="tel" name="txtphn"></td>
+</tr>
+<tr> 	
+	<td>Gender:</td>
+	<td><input type="radio" name="gender" value="male">Male</td>
+	<td><input type="radio" name="gender" value="female">Female</td>
+</tr>
+<tr> 	
+	<td>DOB:</td>
+	<td><input type="date" name="dob"></td>
+</tr>
+<tr> 
+	<td>Languages Known:</td>
+	<td><input type="checkbox" name="language" value="english">English</td>
+	<td><input type="checkbox" name="language" value="hindi">Hindi</td>
+	<td><input type="checkbox" name="language" value="telugu">Telugu</td>
+</tr>
+<tr> 	
+	<td>Technical Skills:</td>
+	<td><select name="technical skills" size=2 multiple>
+		<option value="C">C</option>
+		<option value="C++">C++</option>
+		<option value="Java">Java</option>
+		<option value="HTML">HTML</option></select></td>
+</tr>
+<tr> 	
+	<td>State:</td>
+	<td><select name="state">
+		<option value="Telangana">Telangana</option>
+		<option value="Andhra Pradesh">Andhra Pradesh</option>
+		<option value="Maharashtra">Maharashtra</option>
+		<option value="Tamil Nadu">Tamil Nadu</option></select></td>
+</tr>
+<tr> 	
+	<td>District:</td>
+	<td><select name="district">
+		<option value="Mancherial">Mancherial</option>
+		<option value="RangaReddy">RangaReddy</option>
+		<option value="Karimnagar">Karimnagar</option>
+		<option value="Warangal">Warangal</option></select></td>
+</tr>
+<tr> 	
+	<td>Address:</td>
+	<td><textarea rows="8" cols="15"> </textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center" ><input type="submit" value="signin"></td>
+</tr>
+</table>
+</form>
+</div>
+</center>
+</body>
+</html>
